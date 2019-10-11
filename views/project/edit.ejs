@@ -1,0 +1,235 @@
+<h1>Edit project page</h1>
+
+<%include ../partials/header%>
+
+<form action="/projects/<%=project._id%>?_method=PUT" method="POST">
+    <div class="container-fluid">
+        <div class=" row hero">
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    <h6 class="text-center">Don't forget to submit your changes </h6>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group ">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="inputName" value="<%=project.name%>">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="projectDescription">Description</label>
+                    <textarea name="description" class="form-control" id="projectDescription"
+                        rows="6"><%=project.description%></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-outline-secondary btn-lg"> Submit changes</button>
+                </div>
+
+                <div class="bordered row">
+                    <% project.logos.map((logo)=>{ %>
+                    <div class="col-md-4 col-xs-6 logo-ctn">
+                        <img src="<%=logo.imageUrl%>" alt="">
+                    </div>
+                    <% });%>
+                    <div class="col-12">
+                        <a href="/projects/<%=project._id%>/logo/new" class="cta">
+                            <span>Add A new Logo</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div style="background:url(<%= project.image%>) center no-repeat; background-size:cover;height:60vh">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="uploadImg" class="btn btn-outline-secondary">Change the project's Image</div>
+                        <div id="uploadVideo" class="btn btn-outline-secondary">Link an external Video</div>
+                        <!-- <a>Change The project's image</a> -->
+                        <div style="display:none;" id="image-form" class="bordered form-group">
+                            <label for="imageFile">Upload A new Image</label>
+                            <input type="file" name="image" class="form-control-file" id="imageFile">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div style="display:none" id="video-form" class="form-group ">
+                            <label for="inputName" class="form-label">Video Url</label>
+                            <input type="text" name="videoUrl" class="form-control" id="inputName"
+                                value="<%=project.videoUrl%>">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</form>
+<div class="container">
+    <div class="border row">
+        <%project.Sections.map((section)=>{ %>
+        <div class=" col-md-12">
+            <div class="header bg-blue">
+                <h2><%= section.title%></h2> <span></span>
+            </div>
+            <div class="">
+                <%if (section.image !== ''){ %>
+                <div style="background: url(<%= section.image%>)" class="image"> </div>
+                <% } %>
+                <p><%= section.p1%></p>
+                <p><%= section.p2%></p>
+                <p><%= section.p3%></p>
+                <p><%= section.p4%></p>
+            </div>
+            <!-- <img src="<%= section.image%>" alt=""> -->
+            <div class="row">
+                <a class="button btn btn-outline-info" id=""
+                    href="/projects/<%=project._id%>/section/<%=section._id%>/edit">
+                    Update <%= section.title%></a>
+                <form action="/projects/<%=project._id%>/section/<%=section._id%>/delete/?_method=DELETE" method="POST">
+                    <input class="button btn btn-outline-danger" type="submit" value="Delete <%= section.title%>">
+                </form>
+            </div>
+        </div>
+        <% })%>
+        <div class="btn-ctn col-12">
+            <!-- <a href="/projects/<%=project._id%>/section/new">Add a new section</a> -->
+            <a href="/projects/<%=project._id%>/section/new" class="cta">
+                <span>Add A new Section</span>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="header bg-pink">
+            <h2>Team</h2> <span></span>
+        </div>
+        <%project.teamMembers.forEach((member)=>{ %>
+        <div class="bordered member-ctn col-md-4">
+            <ul>
+                <li class="list-item"><%= member.name%>, <%= member.role%> </li>
+            </ul>
+            <div class="row">
+                <a class="button btn btn-outline-info" id=""
+                    href="/projects/<%=project._id%>/team/<%=member._id%>/edit">Update Member</a>
+                <form action="/projects/<%=project._id%>/team/<%=member._id%>/delete/?_method=DELETE" method="POST">
+                    <input class="button btn btn-outline-danger" type="submit" value="Delete Member">
+                </form>
+            </div>
+        </div>
+        <% })%>
+        <div class="col-12">
+            <!-- <a href="/projects/<%=project._id%>/team/new">Add new team Members</a> -->
+            <a href="/projects/<%=project._id%>/team/new" class="button cta">
+                <span>Add A new Team Member</span>
+                <svg width="13px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+        <div class="bordered col-12">
+            <a href="">Add A team Image</a>
+            <form action="/projects/<%=project._id%>/teamImage/?_method=PUT" method="POST"
+                enctype="multipart/form-data">
+                <input type="file" name="image" value="team Image">
+                <input type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<hr>
+<!-- <div class="container">
+    <div class="row">
+        <%project.news.forEach((card)=>{ %>
+        <div class="col-md-12">
+            <img src="<%= card.image%>" alt="">
+            <p><%= card.title%></p>
+            <p><%= card.description%></p>
+            <p><%= card.email%></p>
+        </div>
+        <div class="col-12">
+            <a id="" href="/projects/<%=project._id%>/news/<%=card._id%>/edit">I want to change
+                the <%= card.title%> info</a>
+
+            <form action="/projects/<%=project._id%>/news/<%=card._id%>/delete/?_method=DELETE" method="POST">
+                <input type="submit" value="delete">
+            </form>
+        </div>
+        <% })%>
+        <div class="col-12">
+            <a href="/projects/<%=project._id%>/news/new">Add news card</a>
+        </div>
+    </div>
+</div> -->
+
+<div class=" container">
+    <div class="header bg-red">
+        <h2>News & Events</h2> <span></span>
+    </div>
+    <div class="">
+        <div class="row">
+            <%project.news.forEach((card)=>{ %>
+            <div class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
+                <a href="<%= card.url%>">
+                    <div class="news-card">
+                        <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
+                            class="news-image"> </div>
+                        <span>[<%= card.type%>]</span>
+                        <h3><%= card.title%></h3>
+                        <p><%= card.description%></p>
+                    </div>
+                </a>
+                <div class="col-12">
+                    <a id="" href="/projects/<%=project._id%>/news/<%=card._id%>/edit">I want to change
+                        the <%= card.title%> info</a>
+
+                    <form action="/projects/<%=project._id%>/news/<%=card._id%>/delete/?_method=DELETE" method="POST">
+                        <input class="btn btn-outline-danger" type="submit" value="delete">
+                    </form>
+                </div>
+            </div>
+
+            <% })%>
+            <div class="col-12">
+                <!-- <a href="/projects/<%=project._id%>/news/new">Add news card</a> -->
+                <a href="/projects/<%=project._id%>/news/new" class="button cta">
+                    <span>Add A new Card</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <form action='/projects/images/' method="POST" enctype="multipart/form-data">
+        <input class="form-control-file" type='file' name='image' />
+        <button> SUBMIT</button>
+    </form> -->
+
+<!-- </div> <a href="/projects/header/new/">Add a new <section></section></a> -->
+<%include ../partials/footer%>

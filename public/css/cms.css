@@ -1,0 +1,127 @@
+body {
+    background: #fff;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.bordered {
+    border: 1px outset rgba(255, 171, 157, 0.5);
+    border-radius: 10px;
+    margin: 2px;
+    /* background: #f1f1f1; */
+}
+
+.hero {
+    padding: 20px;
+    border-bottom: #111;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all 0.4s ease;
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(255, 171, 157, 0.5);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+}
+
+.cta span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #ffab9d;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #ffab9d;
+}
+
+.cta.red:hover:before {
+    width: 100%;
+    background: #ff2600;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.96);
+}
+
+.button {
+    margin: 5px 10px 2px 2px;
+    height: 50px;
+}
+
+ul {
+    padding: 0;
+}
+
+.list-item {
+    list-style: none;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.ghost {
+    display: none;
+}
+
+/* .show {
+    display: block;
+} */
+
+#image-form {
+    margin: 12px;
+}
+
+.btn-ctn {
+    margin: 20px;
+}
+
+.member-ctn {
+    margin: 10px;
+}

@@ -1,0 +1,29 @@
+<h1>Team New</h1>
+
+<%include ../partials/header%>
+
+<div class="container ">
+    <form action="/projects/<%=project._id%>/team/" method="POST">
+        <div class="form-group ">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
+        </div>
+        <div class="form-group ">
+            <label for="inputName" class="form-label">Role</label>
+            <input type="text" name="role" class="form-control" id="inputName" placeholder="Role">
+        </div>
+        <div class="form-group ">
+            <label for="inputName" class="form-label">Title</label>
+            <input type="text" name="email" class="form-control" id="inputName" placeholder="Email">
+        </div>
+        <button> SUBMIT</button>
+    </form>
+    <hr>
+
+
+    <!-- <form action='/projects/images/' method="POST" enctype="multipart/form-data">
+        <input class="form-control-file" type='file' name='image' />
+        <button> SUBMIT</button>
+    </form> -->
+
+</div> <a href="/projects/header/new/">Add a new <section></section></a>

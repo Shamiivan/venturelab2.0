@@ -1,0 +1,44 @@
+#navbar-ctn {
+    background: #48aab6;
+
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #f1f1f1;
+    padding: 25px;
+    font-size: 1.2em;
+    font-family: Lato, sans-serif;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.bg-pink {
+    background: #b55488;
+}
+
+.bg-mustard {
+    background: rgba(234, 146, 36, 0.8)
+}
+
+.m-0 {
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.navbar-toggler {
+    color: white;
+    border: solid 2px #fff;
+}

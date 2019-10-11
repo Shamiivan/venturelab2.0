@@ -1,0 +1,19 @@
+<%include ../partials/header%>
+<div class="container ">
+    <form action="/projects/<%=project._id%>/logo/" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="imageFile">Example file input</label>
+            <input type="file" name="image" class="form-control-file" id="imageFile">
+        </div>
+        <button> SUBMIT</button>
+    </form>
+    <hr>
+    <a href="/projects/">Return to the cms</a>
+
+
+    <!-- <form action='/projects/images/' method="POST" enctype="multipart/form-data">
+        <input class="form-control-file" type='file' name='image' />
+        <button> SUBMIT</button>
+    </form> -->
+
+</div> <a href="/projects/header/new/">Add a new <section></section></a>

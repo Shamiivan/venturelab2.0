@@ -1,0 +1,90 @@
+<section class="prev-hero container-fluid">
+    <div class="row">
+        <div class="col-md-5 prev-hero-content">
+
+            <h1 class="text-center"><%= project.name%></h1>
+            <p><%= project.description%></p>
+            <div class="row">
+                <% project.logos.map((logo)=>{ %>
+                <div class="col-md-4 col-xs-6 logo-ctn">
+                    <img src="<%=logo.imageUrl%>" alt="">
+                </div>
+                <% });%>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div style="background:url(<%= project.image%>) center no-repeat; background-size:cover;height:80vh">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
+    <%project.Sections.map((section)=>{ %>
+    <%if(section.title == 'Background'){ %>
+    <div class="row">
+        <div class="col-md-6">
+            <video class="prev-video " style=" border:none;" poster="<%=section.image%>" controls>
+                <source src="/videos/preventure.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-6 prev-section-content">
+            <div class="prev-heading-block">
+                <h2><%= section.title%></h2>
+            </div>
+            <p><%= section.p1%></p>
+            <p><%= section.p2%></p>
+            <p><%= section.p3%></p>
+            <p><%= section.p4%></p>
+        </div>
+        <%} else{%>
+        <div class="row">
+            <div class="col-md-6 prev-section-content">
+                <div class="prev-heading-block">
+                    <h2><%= section.title%></h2>
+                </div>
+                <p><%= section.p1%></p>
+                <p><%= section.p2%></p>
+                <p><%= section.p3%></p>
+                <p><%= section.p4%></p>
+                <%if(section.title == 'Interested in bringing PreVenture to your community, school or institution?'){ %>
+                <p>*Eligibility – In order to receive
+                    PreVenture
+                    Facilitator Certification, participants must be employed by an educational or
+                    counselling
+                    institution and/or be members of a professional order/association</p>
+                <%}%>
+            </div>
+            
+            <div class="col-md-6 prev-section-media">
+                <div style="background:url(<%= section.image%>) center no-repeat; background-size:cover;height:80vh">
+            </div>
+        </div>
+    </div>
+    <%}%>
+    <% }); %>
+
+</section>
+
+<section class="container">
+    <div class="header prev-heading-block">
+        <h2>News & Events</h2> <span></span>
+    </div>
+    <div class="">
+        <div class="row">
+            <%project.news.forEach((card)=>{ %>
+            <div class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
+                <a href="<%= card.url%>">
+                    <div class="news-card">
+                        <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
+                            class="news-image"> </div>
+                        <span>[<%= card.type%>]</span>
+                        <h3><%= card.title%></h3>
+                        <p><%= card.description%></p>
+                    </div>
+                </a>
+            </div>
+            <% })%>
+        </div>
+    </div>
+
+</section>

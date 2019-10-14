@@ -148,3 +148,84 @@ body {
 .news-image {
     height: 250px;
 }
+
+/* PREVENTURE  */
+.prev-hero {
+    padding: 30px;
+
+}
+
+.prev-hero-content {
+    padding: 120px 20px;
+    background: #faf8f8;
+    font-size: 1.2em;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+    /* padding: 10px 0px 0px 10px; */
+    color: #222;
+}
+
+.prev-hero-content h1 {
+    font-family: Merriweather, serif;
+    font-size: 3em;
+    font-weight: 300;
+    padding: 20px auto;
+}
+
+.prev-hero-content p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 10px 0px 0px 10px;
+    color: #222;
+}
+
+.prev-heading-block {
+    padding: 10px;
+    color: black;
+    min-height: 50px;
+    margin-top: 20px;
+    background: url('/images/paint-brush.png') bottom no-repeat;
+    background-size: cover;
+}
+
+.prev-heading-block h2 {
+    font-family: Merriweather, serif;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.prev-section-content {
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px 50px;
+    background: #f5f5f5;
+}
+
+.prev-section-content p {
+    font-size: 1em;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 10px 0px 0px 10px;
+    color: #222;
+}
+
+.prev-section-media {
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.prev-video {
+    margin-top: 40px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+
+}

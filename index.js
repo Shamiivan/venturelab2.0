@@ -42,7 +42,7 @@ cloudinary.config({
 // ROUTES
 // const header = require('./routes/header.js');
 app.get('/', (req, res) => {
-    res.redirect('/projects');
+    res.render('public/home');
 });
 app.use('/projects', require('./routes/project.js'));
 app.use('/projects/:id/section', require('./routes/section.js'));

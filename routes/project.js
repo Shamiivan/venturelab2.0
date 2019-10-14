@@ -42,15 +42,13 @@ router.put("/:id/teamImage/", parser.single("image"), (req, res) => {
 
 
 
-
-
 // ROUTES
 
 
 // PUBLIC ROUTES
 router.get('/public/46fBxzRSz3bmj/', (req, res) => {
     Project.find({}, (err, Projects) => {
-        res.render('project/public/index', {
+        res.render('public/index', {
             Projects: Projects
         });
     })
@@ -65,7 +63,7 @@ router.get('/:id/showToPublic/46fBxzRSz3bmj', (req, res) => {
             if (err) {
                 console.log('ERROR RENDERING THE EDIT PAGE', err)
             } else {
-                res.render("project/public/show", {
+                res.render("public/show", {
                     project: projectToUpdate
                 });
             }
@@ -119,7 +117,8 @@ router.get('/:id/edit', (req, res) => {
 
 });
 
-router.put("/:id/", (req, res) => {
+router.put("/:id/", parser.single("image"), (req, res) => {
+    console.log(req.file);
     if (req.file == undefined) {
         const udpdatedProject = {};
         udpdatedProject.name = req.body.name;

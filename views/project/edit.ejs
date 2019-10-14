@@ -1,13 +1,13 @@
-<h1>Edit project page</h1>
-
 <%include ../partials/header%>
 
-<form action="/projects/<%=project._id%>?_method=PUT" method="POST">
+<form action="/projects/<%=project._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class=" row hero">
             <div class="col-12">
                 <div class="alert alert-primary" role="alert">
-                    <h6 class="text-center">Don't forget to submit your changes </h6>
+                    <h6 class="text-center">You are now editing <%=project.name%> page: Don't forget to submit your
+                        changes
+                    </h6>
                 </div>
             </div>
             <div class="col-md-6">
@@ -20,9 +20,7 @@
                     <textarea name="description" class="form-control" id="projectDescription"
                         rows="6"><%=project.description%></textarea>
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-outline-secondary btn-lg"> Submit changes</button>
-                </div>
+
 
                 <div class="bordered row">
                     <% project.logos.map((logo)=>{ %>
@@ -69,7 +67,9 @@
 
 
         </div>
-
+        <div class="col-12">
+            <button class="btn btn-outline-secondary btn-lg"> Submit changes</button>
+        </div>
     </div>
 
 </form>

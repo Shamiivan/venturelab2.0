@@ -1,0 +1,100 @@
+<%include ../partials/header%>
+<%if(project.name == 'PreVenture') {%>
+<%include ./preventure %>
+<%} else { %>
+<div class="page-wrapper">
+    <div class="hero-section container-fluid">
+        <div class="row">
+            <div class="col-md-5 hero-content">
+                <h1 class="text-center"><%= project.name%></h1>
+                <p><%= project.description%></p>
+                <div class="row">
+                    <% project.logos.map((logo)=>{ %>
+                    <div class="col-md-4 col-xs-6 logo-ctn">
+                        <img src="<%=logo.imageUrl%>" alt="">
+                    </div>
+                    <% });%>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div style="background:url(<%= project.image%>) center no-repeat; background-size:cover;height:80vh">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container">
+
+        <%project.Sections.map((section)=>{ %>
+        <div class="section-container container">
+
+            <% if(section.title !== 'Background'){%>
+            <div class="header bg-tomato">
+                <h2><%= section.title%></h2> <span></span>
+            </div>
+            <% } else{ %>
+            <div class="header bg-blue">
+                <h2><%= section.title%></h2> <span></span>
+            </div>
+            <% } %>
+            <div class="content">
+                <%if (section.image !== ''){ %>
+                <div style="background: url(<%= section.image%>)" class="image"> </div>
+                <% } %>
+                <p><%= section.p1%></p>
+                <p><%= section.p2%></p>
+                <p><%= section.p3%></p>
+                <p><%= section.p4%></p>
+            </div>
+        </div>
+        <% })%>
+        <div class="section-container container">
+            <div class="header bg-pink">
+                <h2>Team</h2> <span></span>
+            </div>
+            <div class="content">
+                <div class="row mp-0">
+                    <div class="mp-0 col-lg-4 col-md-6">
+                        <ul class="">
+                            <%project.teamMembers.forEach((member)=>{ %>
+                            <li><%= member.name%> <%= member.role%>
+                            </li>
+                            <%= member.email%>
+                            <% })%>
+                        </ul>
+                    </div>
+                    <div style="height:410px; background: url(<%=project.teamImage%>) center no-repeat"
+                        class="col-lg-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container container">
+            <div class="header bg-red">
+                <h2>News & Events</h2> <span></span>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <%project.news.forEach((card)=>{ %>
+                    <div class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
+                        <a href="<%= card.url%>">
+                            <div class="news-card">
+                                <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
+                                    class="news-image"> </div>
+                                <span>[<%= card.type%>]</span>
+                                <h3><%= card.title%></h3>
+                                <p><%= card.description%></p>
+                            </div>
+                        </a>
+                    </div>
+                    <% })%>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<%}%>
+<%include ../partials/footer%>

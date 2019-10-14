@@ -112,7 +112,6 @@ router.post('/', parser.single("image"), (req, res) => {
 
 
 router.get("/:section_id/edit", (req, res) => {
-
     Section.findById(req.params.section_id, (err, section) => {
         if (err) {
             res.redirect("back");
@@ -126,7 +125,8 @@ router.get("/:section_id/edit", (req, res) => {
     });
 });
 
-router.put('/:section_id/', (req, res) => {
+router.put('/:section_id/', parser.single("image"), (req, res) => {
+    console.log(req.file)
     if (req.file == undefined) {
         const udpdatedSection = {};
         udpdatedSection.title = req.body.title;

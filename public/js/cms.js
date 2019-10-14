@@ -1,5 +1,5 @@
 document.getElementById('uploadImg').onclick = function () {
-    alert(`I sure hope you know what you're doing`);
+    alert(`You have to click the submit button to upload the video`);
     document.getElementById('image-form').style.display = 'block';
     document.getElementById('uploadImg').style.display = 'none';
 

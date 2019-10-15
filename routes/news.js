@@ -33,8 +33,6 @@ function deleteDb() {
     });
 }
 
-// deleteDb();
-// ROUTES
 
 //NEW
 router.get('/new', (req, res) => {

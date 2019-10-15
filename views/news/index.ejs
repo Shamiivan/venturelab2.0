@@ -1,0 +1,19 @@
+<%include ../partials/header%>
+<div class="container">
+    <%news.map((card)=>{ %>
+    <div class="page-news-card">
+        <div class="row no-gutter position-relative">
+            <div class="col-md-4 mb-md-0 p-md-4">
+                <img src="<%=card.image%>" class="w-100" alt="...">
+            </div>
+            <div class="col-md-8 position-static p-4 pl-md-0">
+                <h5 class="mt-0"><%=card.title%></h5>
+                <p><%=card.description%></p>
+                <a target="_blank" href="<%=card.url%>" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+    <% })%>
+</div>
+
+<%include ../partials/footer%>

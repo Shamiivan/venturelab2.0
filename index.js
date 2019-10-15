@@ -41,9 +41,8 @@ cloudinary.config({
 
 // ROUTES
 // const header = require('./routes/header.js');
-app.get('/', (req, res) => {
-    res.render('public/home');
-});
+
+app.use(require('./routes/index.js'));
 app.use('/projects', require('./routes/project.js'));
 app.use('/projects/:id/section', require('./routes/section.js'));
 app.use('/projects/:id/team', require('./routes/team.js'));

@@ -1,0 +1,74 @@
+<% include ../partials/header%>
+<style>
+    body {
+        text-decoration: none;
+    }
+
+    form {
+        padding: 50px 100px;
+        font-family: Lato, sans-serif;
+    }
+
+
+    @media (max-width: 480px) {
+        form {
+            padding: 0;
+            font-family: Lato, sans-serif;
+        }
+    }
+</style>
+<div class="page-wrapper-2">
+    <div class=" container main-section">
+        <div class="heading-div">
+            <div data-ix="float-in-on-scroll" class="heading-block contact">
+                <h2 class="project-heading">Contact Us</h2>
+            </div>
+            <p class="body-text teambody">Interested in learning more? Write us a message.We look forward to hearing
+                from you. </p>
+        </div>
+        <div class="container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="inputPassword4">Name</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="*">
+                    </div>
+                    <div class=" form-group col-sm-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Company</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="*">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Position</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="*">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">Country</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Your Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>
+<% include ../partials/footer%>

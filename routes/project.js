@@ -41,7 +41,6 @@ router.put("/:id/teamImage/", parser.single("image"), (req, res) => {
 
 
 
-
 // ROUTES
 
 

@@ -13,15 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/navbar.css">
+    <!-- <link rel="stylesheet" href="/css/navbar.css"> -->
     <link rel="stylesheet" href="/css/home.css">
     <title>Venture Lab</title>
 </head>
 
 <body>
-    <div id="navbar-ctn">
+    <div id="navbar" class="position-fixed w-100 z-index-10">
         <nav class="navbar navbar-expand-lg">
-            <a class="nav-link navbar-brand" href="#">Navbar</a>
+            <a class="nav-link navbar-brand" href="/">Venture Lab</a>
             <button class="navbar-toggler color-white" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -30,28 +30,29 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item d-block bg-pink dropdown">
+                    <li id="preventure" class="nav-item d-block dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             PreVenture
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Portal</a>
+                        <a class="dropdown-item"
+                            href="/projects/5da00b3f22cac548ecdf80fb/showToPublic/46fBxzRSz3bmj">PreVenture</a>
+                        <a class="dropdown-item" href="#">Portal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects/public/46fBxzRSz3bmj/">Projects <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link" href="/news">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Publications</a>
+                        <a class="nav-link" href="/publication">Publications</a>
                     </li>
-                    <li class="nav-item bg-mustard m-0">
+                    <li id="contact" class="contact" class="nav-item  m-0">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
@@ -63,3 +64,209 @@
         </nav>
 
     </div>
+
+    <section id="landing-section" class="box overlay">
+    </section>
+
+    <section id="about">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 border">
+                    <div class="ctn">
+                        <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+                            <div class="prev-article-image ">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class=" col-md-6">
+                    <div class="about-content">
+                        <div class="container home-header bg-mustard ">
+                            <h1 class="text-center">Venture Lab</h1>
+                        </div>
+                        <p>The Venture Lab supports research on adolescent brain development and risk factors for mental
+                            health and substance use disorders.</p>
+                        <p>Led by Dr. Patricia Conrod, professor of psychiatry at the Université de Montréal, we are
+                            working
+                            on the development of new mental health promotion strategies by studying the influence of
+                            genetics, environmental factors, and neuro-cognitive development on mental health and
+                            addiction
+                        </p>
+                        <p>Based out of CHU Sainte-Justine’s Research Centre in Montreal, Quebec, Venture Lab features
+                            an
+                            international roster of scientists conducting a number of important research projects with a
+                            key
+                            focus on personality, building resilience and early intervention. Dr. Conrod's brainchild,
+                            the
+                            PreVenture Program, is also hosted at the VentureLab, where PreVenture experts are trained,
+                            and
+                            provide training and supervision to health and educational professionals who wish to
+                            implement
+                            PreVenture in their community.</p>
+                        <a href="/about">More about Venture Lab</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container-fluid">
+            <div class="container-fluid proj-header bg-mustard ">
+                <h1 class="text-center">Projects</h1>
+            </div>
+            <div class="row">
+                <% projects.map((project)=>{ %>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="card">
+                        <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
+                            class="card-img-top">
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center card-title"><%=project.name%></h5>
+                            <p class="card-text"><%=project.description.substring(0, 202)%>[...]</p>
+                            <!-- <a href="#" class="btn btn-primary stretched-link">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <% })%>
+
+                <!-- <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-img-top">
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center card-title">CUSP</h5>
+                            <p class="card-text">The Canadian Underage Substance Use Prevention (CUSP)
+                                Trial is a multi-site, pan-Canadian study that aims to evaluate the long-term
+                                effects of PreVenture on preventing risk behaviours that can lead to substance
+                                misuse </p>
+                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-img-top">
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center card-title">ABrain</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="card">
+                        <div class="card-img-top">
+
+                        </div>
+                        <div class="card-body">
+                            <h5 class="text-center card-title">CoVenture</h5>
+                            <p class="card-text">An international research consortium aims to identify the
+                                apparatus of views surrounding the BDMA, in order to develop sound governance to
+                                apply the BDMA into practice.</p>
+                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container-fluid">
+            <div class="container-fluid proj-header bg-mustard ">
+                <h1 class="text-center">News & Events</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-4 card-ctn">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <div class="news card">
+                            <div style="background: url(/images/canada-flag.jpg) center no-repeat;background-size: cover;"
+                                class="news-card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <span class="news-span" style="color:black;">[Publication]</span>
+                                <h5 class="text-center card-title">CUSP Trial Awarded $1.7 million CIHR Grant</h5>
+                                <p class="card-text">The Canadian Institute of Health Research has awarded the
+                                    Canadian Underage Substance use Prevention (CUSP) Trial, led by Dr Patricia
+                                    Conrod
+                                    at CHU Sainte-Justine, funding for five years [...]</p>
+                                <!-- <a href="#" class="btn btn-primary stretched-link">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 card-ctn">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <div class="news card">
+                            <div style="background: url(/images/preventure-featured.jpg) center no-repeat;background-size: cover;"
+                                class="news-card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <span class="news-span" style="color:black;">[Event]</span>
+                                <h5 class="text-center card-title">Preventure Program featured at international meeting
+                                    on
+                                    suicide prevention</h5>
+                                <p class="card-text">Preventure Program featured at international meeting on
+                                    suicide
+                                    prevention hosted by U.S. Substance Abuse and Mental Health Services
+                                    Administration on
+                                    International Suicide Prevention Day..]</p>
+                                <!-- <a href="#" class="btn btn-primary stretched-link">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-4 card-ctn">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <div class="news card">
+                            <div style="background: url(/images/vaping.jpg) center no-repeat;background-size: cover;"
+                                class="news-card-img-top">
+
+                            </div>
+                            <div class="card-body">
+                                <span class="news-span">[what we&#x27;re reading]</span>
+                                <h5 class="">Youth Vaping Is Now An &#x27;Epidemic&#x27;</h5>
+                                <p class="news-paragraph">
+                                    U.S. Surgeon General Jerome Adams declared electronic
+                                    cigarette use among youth a national epidemic in an advisory detailing the
+                                    harms of
+                                    electronic cigarette use among adolescents.</p>
+                                <!-- <a href="#" class="btn btn-primary stretched-link">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

@@ -26,10 +26,12 @@
 
 .bg-pink {
     background: #b55488;
+    transition: all 0.5s ease-in-out
 }
 
 .bg-mustard {
-    background: rgba(234, 146, 36, 0.8)
+    background: rgba(234, 146, 36, 0.8);
+    transition: all 0.5s ease-in-out
 }
 
 .m-0 {

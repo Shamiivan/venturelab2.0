@@ -43,6 +43,7 @@ cloudinary.config({
 // const header = require('./routes/header.js');
 
 app.use(require('./routes/index.js'));
+app.use(require('./routes/forum.js'));
 app.use('/projects', require('./routes/project.js'));
 app.use('/projects/:id/section', require('./routes/section.js'));
 app.use('/projects/:id/team', require('./routes/team.js'));

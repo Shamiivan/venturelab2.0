@@ -4,6 +4,11 @@ body {
     line-height: 1.6;
     color: #333;
     background: #fdfdfde1;
+
+}
+
+.page-wrapper {
+    min-height: 50vh
 }
 
 .button {
@@ -339,7 +344,7 @@ body {
     font-family: Merriweather, serif;
     font-size: 1.5em;
     font-weight: 300;
-    color: #333;
+    color: rgb(42, 42, 42);
 }
 
 #footer li {

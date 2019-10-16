@@ -1,0 +1,34 @@
+<%include ../partials/header%>
+<div class="page-wrapper-2 container">
+    <link rel="stylesheet" href="/css/forum.css">
+    <div class="container proj-header bg-mustard ">
+        <h1 class="text-center">New Discussion Topic</h1>
+    </div>
+    <p class="short-desc">This forum is the central place for all technical discussions
+        specifically-related to PreVenture. Everyone is welcome to ask questions, make suggestions, share ideas
+        and
+        leave comments</p>
+    <div class="full-ctn ">
+        <div class="row">
+            <div class=" col-12">
+                <form action="/forum/newDiscussion" method="POST">
+                    <!--  -->
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="topic" placeholder="Topic">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="projectDescription"></label>
+                        <textarea name="content" class="form-control" id="projectDescription" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <button class="button"></button> -->
+                        <button class="button">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<%include ../partials/footer%>

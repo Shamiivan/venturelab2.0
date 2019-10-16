@@ -141,19 +141,17 @@ router.put("/:id/", parser.single("image"), (req, res) => {
             .catch(err => console.log(err));
     }
 
-    // Project.findByIdAndUpdate(req.params.id, updatedProject, (err, updatedProject) => {
-    //     if (err) {
-    //         res.send("update failed");
-    //         console.log("ERROR WHILE UPDATING THE PAGE" + err);
-    //     } else {
-    //         res.redirect("/study/" + req.params.id + '/edit');
-    //         console.log('projectUpdate', updatedProject);
-
-    //     }
-    // });
 });
 
-
-
+router.delete("/:id/delete/", (req, res) => {
+    Project.findByIdAndRemove(req.params.id, (err) => {
+        if (err) {
+            console.log("ERROR DELETING Project:" + err);
+            res.redirect("back");
+        } else {
+            res.redirect('/projects/');
+        }
+    });
+});
 
 module.exports = router;

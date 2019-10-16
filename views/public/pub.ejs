@@ -6,54 +6,43 @@
 </style>
 <div class="page-wrapper-2">
 
-    <div class="container proj-header bg-mustard ">
-        <h1 class="text-center">Publications</h1>
-    </div>
 
-    <div data-ix="content-load" class="news_content">
-        <div class="news_container w-container">
-            <div class="news-columns w-row">
-                <div class="newscolumn1 w-col w-col-2">
-                    <ul class="dates w-list-unstyled">
-
-                    </ul>
-                </div>
-                <div class="container">
-
-                    <div class="publications ">
-                        <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Conrod+PJ%5BAuthor%5D+OR+Conrod+P%5BAuthor%5D"
-                            target="_blank" class="link-block-2 w-inline-block">
-                            <p>Conrod, PJ, and Nikolaou, K (2016). On the developmental neuropsychology
-                                of
-                                substance use disorders. Journal of Child Psychology and Psychiatry,
-                                Annual
-                                Research Reviews. J Child Psychol Psychiatry, 2016 Mar; 57(3):371-94.
-                            </p>
-                        </a>
-
-
-                    </div>
-                    <% data.forEach((pub)=> { %>
-                    <div class="publications ">
-                        <a style="text-decoration:none;"
-                            href="https://scholar.google.com/citations?user=dksr5mMAAAAJ&hl=en&oi=ao#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3Ddksr5mMAAAAJ%26citation_for_view%3Ddksr5mMAAAAJ%3AZph67rFs4hoC%26tzom%3D240"
-                            target="_blank" class="">
-                            <h5 class=""><%=pub.title%></h5>
-                            <p><%=pub.desc%>
-                            </p>
-
-                        </a>
-                    </div>
-                    <% });%>
-                </div>
-            </div>
-            <a href="https://scholar.google.com/citations?user=dksr5mMAAAAJ&hl=en&oi=ao#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3Ddksr5mMAAAAJ%26citation_for_view%3Ddksr5mMAAAAJ%3AZph67rFs4hoC%26tzom%3D240"
-                style="margin-top:20px" class="button centered">Click Here to view Patricia's most recent
-                publications on
-                google
-                scholar </a>
+    <div class="container">
+        <div class="container proj-header bg-mustard ">
+            <h1 class="text-center">Publications</h1>
         </div>
 
+        <div class="publications">
+            <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Conrod+PJ%5BAuthor%5D+OR+Conrod+P%5BAuthor%5D"
+                target="_blank" class="link-block-2 w-inline-block">
+                <p>Conrod, PJ, and Nikolaou, K (2016). On the developmental neuropsychology
+                    of
+                    substance use disorders. Journal of Child Psychology and Psychiatry,
+                    Annual
+                    Research Reviews. J Child Psychol Psychiatry, 2016 Mar; 57(3):371-94.
+                </p>
+            </a>
+        </div>
+        <% data.forEach((pub)=> { %>
+        <div class="publications container">
+            <a style="text-decoration:none;" href="https://scholar.google.com/citations?user=dksr5mMAAAAJ&hl=en&oi=ao#"
+                target="_blank" class="">
+                <h5 class=""><%=pub.title%></h5>
+                <p><%=pub.desc%>
+                </p>
+
+            </a>
+        </div>
+        <% });%>
+        <a href="https://scholar.google.com/citations?user=dksr5mMAAAAJ&hl=en&oi=ao#" style="margin-top:20px"
+            class="button centered">Click Here to view Patricia's most recent
+            publications on
+            google
+            scholar </a>
     </div>
+
 </div>
+
+
+
 <% include ../partials/footer %>

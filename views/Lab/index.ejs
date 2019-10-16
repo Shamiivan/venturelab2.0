@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <% members.map((member)=>{ %>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="card">
+                <div style="background: url(<%=member.image%>) center no-repeat;background-size: contain;"
+                    class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="text-center card-title"><%=member.name%></h5>
+                    <p class="card-text"><%=member.role%></p>
+                    <a href="/ventureLabTeam/<%=member.id%>/edit" class=" stretched-link"></a>
+                </div>
+            </div>
+        </div>
+
+        <% })%>
+    </div>
+
+</div>
+<div class="col-12">
+    <a href="/ventureLabTeam/new" class="cta">
+        <span>Add A new member</span>
+        <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+    </a>
+</div>
+
+
+<%include ../partials/footer%>

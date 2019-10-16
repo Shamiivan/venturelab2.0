@@ -26,7 +26,7 @@ a {
 
 .cta {
     position: relative;
-    margin: auto;
+    margin: 40px 30px;
     padding: 19px 22px;
     transition: all 0.4s ease;
 }
@@ -124,4 +124,16 @@ ul {
 
 .member-ctn {
     margin: 10px;
+}
+
+#New-form {
+    width: 50rem;
+    margin-top: 30px;
+}
+
+#submit-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: solid 2px #333;
 }

@@ -48,6 +48,7 @@ app.use('/projects/:id/section', require('./routes/section.js'));
 app.use('/projects/:id/team', require('./routes/team.js'));
 app.use('/projects/:id/news', require('./routes/news.js'));
 app.use('/projects/:id/logo', require('./routes/logo.js'));
+app.use('/ventureLabTeam', require('./routes/venturelabTeam.js'));
 
 
 let port = process.env.PORT || 5000

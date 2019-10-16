@@ -221,7 +221,9 @@
     </div>
 </div>
 
-
+<form action="/projects/<%=project._id%>/delete/?_method=DELETE" method="POST">
+    <input class="button btn btn-outline-danger" type="submit" value="Delete <%= project.name%>">
+</form>
 
 
 

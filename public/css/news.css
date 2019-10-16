@@ -1,5 +1,6 @@
 .page-news-card {
     margin-top: 15px;
+    border-radius: 5px;
 }
 
 .page-news-card h5 {
@@ -45,7 +46,7 @@
 }
 
 .publications p {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 1.7;
     font-weight: 400;
     text-align: left;

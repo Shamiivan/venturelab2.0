@@ -6,6 +6,39 @@ body {
     background: #fdfdfde1;
 }
 
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px 35px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: transparent;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    font-family: Lato, sans-serif;
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.button:hover {
+    border-color: #878787;
+    background-color: #48aab6;
+    color: #fff;
+}
+
+.button.centered {
+    display: block;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
+
+
+}
+
 .bg-blue {
     background: #48a6b6;
 }
@@ -292,4 +325,57 @@ body {
     padding: 20px;
 
 
+}
+
+
+/* FOOTER */
+#footer {
+    padding: 50px;
+    background: #ef6a53;
+    margin-top: 20px;
+}
+
+#footer h4 {
+    font-family: Merriweather, serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #333;
+}
+
+#footer li {
+    color: #ffffff;
+    font-size: 1em;
+    list-style: none;
+}
+
+#footer-p {
+    color: #ffffff;
+    font-size: 1em;
+    width: 60%;
+    margin-left: 90px;
+    margin-bottom: 10px;
+}
+
+#footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+.chu-image {
+    height: 80%;
+    background: url(/images/chu-logo.png) center no-repeat;
+    background-size: contain;
+}
+
+.icons {
+    margin-top: 1rem;
+}
+
+.icons a {
+    padding: 0.4rem;
+    transition: all 0.5s ease-out;
+}
+
+.icons a:hover {
+    color: #ffffff;
 }

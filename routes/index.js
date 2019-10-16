@@ -6,6 +6,7 @@ const express = require('express'),
     Project = require('../models/Project'),
     Section = require('../models/Section'),
     News = require('../models/News'),
+    Lab = require('../models/VentureLab'),
     Team = require('../models/Team'),
     Image = require('../models/ProjectImage');
 
@@ -93,6 +94,12 @@ router.get('/publication', (req, res) => {
 router.get('/contact', (req, res) => {
     res.render('public/contact')
 });
-
+router.get('/about/46fBxzRSz3bmj/', (req, res) => {
+    Lab.find({}, (err, members) => {
+        res.render('public/about', {
+            members: members
+        });
+    })
+});
 
 module.exports = router;

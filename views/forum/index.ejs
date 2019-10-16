@@ -4,42 +4,48 @@
     <div class="container proj-header bg-mustard ">
         <h1 class="text-center">Forum</h1>
     </div>
-    <p class="short-desc">This forum is the central place for all technical discussions
-        specifically-related to PreVenture. Everyone is welcome to ask questions, make suggestions, share ideas
+
+    <p class="short-desc"> Hi <%= currentUser.username %>! Welcome to our forum. This is a central place for all
+        technical
+        discussions
+        specifically-related to PreVenture. You are welcome to ask questions, make suggestions, share ideas
         and
         leave comments</p>
     <a href="/forum/newDiscussion" class="button">Add a new discussion topic</a>
     <div class="container-fluid">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <h3 class="topic">Discussions</h3>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <h3 class="topic">Started by</h3>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <h3 class="topic">Created</h3>
-                </div>
-            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
 
-            <% Discussions.forEach((discussion) => { %>
-            <div class=" bg-grey row">
-                <div class="col-sm-12 col-md-4">
+                        <th scope="col">
+                            <h3 class="topic">Topic</h3>
+                        </th>
+                        <th scope="col">
+                            <h3 class="topic">Created On</h3>
+                        </th>
+                        <th scope="col">
+                            <h3 class="topic">Created By</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Discussions.forEach((discussion) => { %>
+                    <tr>
+                        <td> <a href="/forum/discussion/<%=discussion.id%>">
+                                <h3 class=" topic"><%= discussion.topic%></h2>
+                            </a></td>
+                        <td><%= discussion.created.toDateString()%></td>
+                        <td><%= discussion.author.username%></td>
+                    </tr>
+                    <% }); %>
 
-                    <a href="/forum/discussion/<%= discussion.id%>">
-                        <h3 class=" topic"><%= discussion.topic%></h2>
-                    </a>
-
-                </div>
-                <div class="col-sm-12 col-md-4"><%= //discussion.content%><h3 class="topic author">Unknown author
-                    </h3>
-                </div>
-                <div class="col-sm-12 col-md-4"></div>
-            </div>
-            <% }); %>
+                </tbody>
+            </table>
         </div>
 
     </div>
 </div>
+
+
 <% include ../partials/footer%>

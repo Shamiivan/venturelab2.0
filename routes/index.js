@@ -29,11 +29,8 @@ router.get('/', (req, res) => {
                         projects: projectsToDisplay,
                         news: newsToDisplay
                     });
-                    console.log('PROJECT TO DISPLAY', projectsToDisplay);
-                    console.log('News TO DISPLAY', newsToDisplay);
                 })
                 .catch((err) => console.log('ERROR LOADING THE NewsTO INITIAL PAGE', err));
-
         })
         .catch((err) => console.log('ERROR LOADING THE PROJECT TO INITIAL PAGE', err));
 

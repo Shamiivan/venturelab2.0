@@ -3,7 +3,12 @@ const express = require('express'),
     path = require('path'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override');
+    flash = require("connect-flash"),
+    methodOverride = require('method-override'),
+    passport = require("passport"),
+    localStrategy = require("passport-local").Strategy,
+    passportLocalMongoose = require("passport-local-mongoose"),
+    User = require("./models/User");
 
 const multer = require("multer");
 const cloudinary = require("cloudinary");
@@ -20,8 +25,8 @@ mongoose.connect(url, {
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
 });
-
 // APP CONFIG
+app.use(flash());
 app.use(
     bodyParser.urlencoded({
         extended: true
@@ -30,7 +35,28 @@ app.use(
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(methodOverride("_method"));
+//AUTHETINCATION 
 
+//PASSPORT CONFIGc9
+
+app.use(require("express-session")({
+    secret: "VentureLab Site",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+});
 //CLOUDINARY CONFIG
 cloudinary.config({
     cloud_name: 'dafz217d6',
@@ -38,10 +64,9 @@ cloudinary.config({
     api_secret: 'FHjoFJmSDMNRFwneHtiY2rR60n0'
 });
 
-
 // ROUTES
 // const header = require('./routes/header.js');
-
+app.use(require('./auth.js'))
 app.use(require('./routes/index.js'));
 app.use(require('./routes/forum.js'));
 app.use('/projects', require('./routes/project.js'));

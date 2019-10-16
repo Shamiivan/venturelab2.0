@@ -1,0 +1,31 @@
+<% include ../partials/header%>
+<div style="background: white;padding-top:10vh" class="container page-wrapper relative align-middle">
+    <div class="row">
+        =
+        <div style="width: 40%; margin: 25px auto;">
+            <div class="alert alert-secondary" role="alert">
+                <h5 class="text-center"><%= error %></h5>
+            </div>
+            <!-- <h1 style="text-align:center ">Login</h1> -->
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <button style="background:#48aab6" ;opacity:0.5 id="btn"
+                        class="btn btn-lg btn-primary btn-block">Login</button>
+                </div>
+            </form>
+            <div class="row text-center">
+                <div class="col-6">
+                    <!-- <a href ="/" class= "btn btn-md btn-primary">Home</a>
+                    <a href ="/register"class= "btn btn-md btn-primary" href="/register">Register</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer%>

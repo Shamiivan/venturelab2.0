@@ -1,5 +1,4 @@
 $(".header").click(function () {
-
     $header = $(this);
     //getting the next element
     $content = $header.next();
@@ -12,5 +11,4 @@ $(".header").click(function () {
         //     return $content.is(":visible") ? "Less" : "More";
         // });
     });
-
 });

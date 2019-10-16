@@ -2,29 +2,21 @@ const express = require("express"),
     router = express.Router({
         mergeParams: true
     }),
-    Discussion = require("../models/Forum");
-Comment = require("../models/Comment");
+    Discussion = require("../models/Forum"),
+    Comment = require("../models/Comment"),
+    middleware = require("../middleware/index");
 
-// function seedDB() {
-//     Discussion.remove({}, (err) => {
-//         if (err) {
-//             console('error while removing seed data', err);
-//         }
-//         console.log('datatabase seeded');
-//     });
-
-//     data.forEach((seed) => {
-//         Discussion.create(seed, (err, newDiscussion) => {
-//             if (err) {
-//                 console.log('error creating Discussion', err)
-//             }
-//             console.log(newDiscussion)
-//         });
-//     });
-// }
+function seedDB() {
+    Comment.remove({}, (err) => {
+        if (err) {
+            console('error while removing seed data', err);
+        }
+        console.log('datatabase seeded');
+    });
+}
 // seedDB();
 
-router.get('/forum', (req, res) => {
+router.get('/forum', middleware.isLoggedIn, (req, res) => {
     Discussion.find({}, (err, foundDiscussions) => {
         if (err) {
             console.log(err)
@@ -43,7 +35,7 @@ router.get('/forum/newDiscussion', (req, res) => {
 });
 
 
-router.post('/forum/newDiscussion', (req, res) => {
+router.post('/forum/newDiscussion', middleware.isLoggedIn, (req, res) => {
     let {
         topic: topic,
         content: content,
@@ -54,6 +46,10 @@ router.post('/forum/newDiscussion', (req, res) => {
         content: content,
         created: created,
     };
+    newDiscussion.author = {
+        id: req.user._id,
+        username: req.user.username
+    }
     Discussion.create(newDiscussion, (err, newDiscussion) => {
         if (err) {
             console.log(err)
@@ -102,16 +98,20 @@ router.post("/forum/discussion/:id/comments", (req, res) => {
             console.log("ERROR FINDING THE DISCUSSION ID: " + err);
             res.redirect("/");
         } else {
+            // let newComment = req.body.comment;
+            // newComment.author = foundDiscussion.author.username;
             Comment.create(req.body.comment, (err, comment) => {
                 if (err) {
                     console.log("ERROR CREATING COMMENT: " + err);
                 } else {
-                    // comment.author.id = req.user._id;
+                    // comment.author.id = req.user.id;
                     // comment.author.username = req.user.username;
+                    comment.author = foundDiscussion.author;
                     comment.save();
                     foundDiscussion.comments.push(comment);
                     foundDiscussion.save();
                     res.redirect('/forum/discussion/' + foundDiscussion._id);
+                    console.log(comment);
                 }
             });
         }
@@ -144,16 +144,16 @@ router.post("/forum/discussion/:id/comments", (req, res) => {
 // });
 
 // DESTROY
-// router.delete("/:comment_id", (req, res) => {
-//     Comment.findByIdAndRemove(req.params.comment_id, (err) => {
-//         if (err) {
-//             console.log("ERROR DELETING COMMENT :" + err);
-//             res.redirect("back");
-//         } else {
-//             res.redirect("/destinations/" + req.params.id);
-//         }
-//     });
-// });
+router.delete("/forum/discussion/:id/:comment_id/delete/", (req, res) => {
+    Comment.findByIdAndRemove(req.params.comment_id, (err) => {
+        if (err) {
+            console.log("ERROR DELETING COMMENT :" + err);
+            res.redirect("back");
+        } else {
+            res.redirect("/forum");
+        }
+    });
+});
 
 module.exports = router;
 

@@ -15,3 +15,8 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // $("#brand").addClass('blue-bg');
 });
+
+
+$("#add-comment").click(function () {
+    $("#comment-section").removeClass('blocked');
+});

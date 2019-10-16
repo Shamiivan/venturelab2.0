@@ -8,7 +8,7 @@ body {
 }
 
 .page-wrapper {
-    min-height: 50vh
+    min-height: 60vh
 }
 
 .button {
@@ -335,7 +335,7 @@ body {
 
 /* FOOTER */
 #footer {
-    padding: 50px;
+    padding: 20px;
     background: #ef6a53;
     margin-top: 20px;
 }

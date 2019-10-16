@@ -1,14 +1,14 @@
 <%include ../partials/header%>
 <div class="page-wrapper">
     <link rel="stylesheet" href="/css/forum.css">
-    <div class="container">
+    <div class=" page-wrapper container">
         <div class="row">
             <div class="col-md-3">
                 <p class="lead"></p>
                 <div class="list-group">
-                    <li class="list-group-item active">Info 1</li>
-                    <li class="list-group-item">Info 2</li>
-                    <li class="list-group-item">Info 3</li>
+                    <li class="list-group-item"> <a href="/forum">View other Topics</a></li>
+                    <li class="list-group-item"> <a href="/forum/newDiscussion">Create A new discussion Topic</a> </li>
+                    <!-- <li class="list-group-item">Info 3</li> -->
                 </div>
             </div>
             <div class="col-md-9">
@@ -17,47 +17,62 @@
                         src="http://curiouscat.net/uploads/quote/twitter_image/3734/in-god-we-trust-3734-1.png"> -->
                     <div class="caption-full">
                         <h4><a><%=discussion.topic%></a></h4>
-                        <h5>created by Unknown author On <span><%= discussion.created %></span> </h5>
-
-                        <p><%=discussion.content%></p>
+                        <h3 class="topic"><%= discussion.author.username%>
+                            <span><%= discussion.created.toDateString()%></span> </h3>
+                        <p>
+                            <%=discussion.content%></p>
                     </div>
                 </div>
-                <div class="well">
-                    <div class="text-right">
+            </div>
+            <div class="well">
+                <div class="text-right">
 
-                        <a class="" href=""><i class="far fa-comment fa-3x"></i></a>
-                        <a href="/forum">View other Topics</a>
-                    </div>
+                    <a id="add-comment" class="" href="#"><i class="far fa-comment fa"></i>Comment</a>
 
-                    <form action="/forum/discussion/<%= discussion.id %>/comments" method="POST">
-                        <div class="form-group">
-                            <textarea name="comment[text]" id="" cols="5" rows="2"></textarea>
-                        </div>
-
-                        <button class="right button">Submit!</button>
-
-                    </form>
-
-
-                    <hr>
-                    <% discussion.comments.forEach((comment)=>{ %>
+                </div>
+                <div id="comment-section" class="blocked container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <strong><%= //comment.author.username %>User X</strong>
-                            <span class="pull-right">10 days ago</span>
-                            <p>
-                                <%= comment.text %>
-                            </p>
-                            <% //if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                            <!-- <a class="btn btn-xs btn-warning" href="#">Edit</a>
-                            <form id="delete-form" action="#" method="POST">
-                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-                            </form> -->
-                            <% //} %>
+                        <div class="col-md-7"></div>
+                        <div class="col-md-5">
+                            <div class="text-right">
+                                <form action="/forum/discussion/<%= discussion.id %>/comments" method="POST">
+                                    <div class="form-group">
+                                        <input id="comment" type="text" class="text-right" name="comment[text]">
+                                        <button class="btn btn-outline-secondary"> <i
+                                                class="fas fa-paper-plane"></i></button>
+                                    </div>
+
+
+
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <% }) %>
+
                 </div>
+                <hr>
+                <% discussion.comments.forEach((comment)=>{ %>
+                <div class="row">
+                    <div class="col-md-9">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><%= comment.created.toDateString()%></span>
+                        <p>
+                            <%= comment.text %>
+                        </p>
+                    </div>
+                    <% if(currentUser && comment.author.id.equals(currentUser.id)){ %>
+                    <div class="col-md-3">
+                        <form id="delete-form"
+                            action="/forum/discussion/<%=discussion.topic.id%>/<%=discussion.topic.comment.id%>"
+                            method="POST">
+                            <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                        </form>
+                    </div>
+                    <!-- <a class="btn btn-xs btn-warning" href="#">Edit</a> -->
+                    <% } %>
+
+                </div>
+                <% }) %>
             </div>
         </div>
     </div>

@@ -28,9 +28,10 @@ const parser = multer({
 });
 
 
-router.put("/:id/teamImage/", parser.single("image"), (req, res) => {
-    const teamImage = req.file.url;
-    Project.findByIdAndUpdate(req.params.id, teamImage)
+router.post("/:id/teamImage/", parser.single("image"), (req, res) => {
+    let project = {}
+    project.teamImage = req.file.url;
+    Project.findByIdAndUpdate(req.params.id, project)
         .then(updatedProject => {
             res.redirect('/projects/' + updatedProject._id + '/edit');
             console.log('UPDATED PROJECT', updatedProject);

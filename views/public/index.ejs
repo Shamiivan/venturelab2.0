@@ -14,11 +14,12 @@
         youth.</p>
     <div class="row">
         <% Projects.map((project)=>{ %>
-        <div class="col-md-6 col-lg-6 col-xl-4">
-            <div class="card">
-                <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
+        <div class="col-md-6 col-lg-6 col-xl-4 projects-ctn">
+            <div class="project-card">
+                <!-- <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
                     class="card-img-top">
-                </div>
+                </div> -->
+                <img src="<%=project.image%>" alt="" srcset="">
                 <div class="card-body">
                     <h5 class="text-center card-title"><%=project.name%></h5>
                     <p class="card-text"><%=project.description.substring(0, 202)%>[...]</p>

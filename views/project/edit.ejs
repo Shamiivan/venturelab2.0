@@ -1,5 +1,5 @@
 <%include ../partials/header%>
-
+<link rel="stylesheet" href="/css/cms.css">
 <form action="/projects/<%=project._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class=" row hero">
@@ -95,7 +95,7 @@
                     href="/projects/<%=project._id%>/section/<%=section._id%>/edit">
                     Update <%= section.title%></a>
                 <form action="/projects/<%=project._id%>/section/<%=section._id%>/delete/?_method=DELETE" method="POST">
-                    <input class="button btn btn-outline-danger" type="submit" value="Delete <%= section.title%>">
+                    <input class="button danger" type="submit" value="Delete <%= section.title%>">
                 </form>
             </div>
         </div>
@@ -119,22 +119,22 @@
             <h2>Team</h2> <span></span>
         </div>
         <%project.teamMembers.forEach((member)=>{ %>
-        <div class="bordered member-ctn col-md-4">
+        <div class="bordered member-ctn col-md-6">
             <ul>
-                <li class="list-item"><%= member.name%>, <%= member.role%> </li>
+                <li class="list-item"><%= member.name%>, <%= member.role%></li>
             </ul>
             <div class="row">
                 <a class="button btn btn-outline-info" id=""
                     href="/projects/<%=project._id%>/team/<%=member._id%>/edit">Update Member</a>
                 <form action="/projects/<%=project._id%>/team/<%=member._id%>/delete/?_method=DELETE" method="POST">
-                    <input class="button btn btn-outline-danger" type="submit" value="Delete Member">
+                    <input class="button danger" type="submit" value="Delete Member">
                 </form>
             </div>
         </div>
         <% })%>
         <div class="col-12">
             <!-- <a href="/projects/<%=project._id%>/team/new">Add new team Members</a> -->
-            <a href="/projects/<%=project._id%>/team/new" class="button cta">
+            <a href="/projects/<%=project._id%>/team/new" class="cta">
                 <span>Add A new Team Member</span>
                 <svg width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"></path>
@@ -142,12 +142,12 @@
                 </svg>
             </a>
         </div>
+
         <div class="bordered col-12">
             <a href="">Add A team Image</a>
-            <form action="/projects/<%=project._id%>/teamImage/?_method=PUT" method="POST"
-                enctype="multipart/form-data">
+            <form action="/projects/<%=project._id%>/teamImage/" method="POST" enctype="multipart/form-data">
                 <input type="file" name="image" value="team Image">
-                <input type="submit" value="SUBMIT">
+                <input class="btn btn-outline-secondary" type="submit" value="Submit Image">
             </form>
         </div>
     </div>
@@ -196,11 +196,10 @@
                     </div>
                 </a>
                 <div class="col-12">
-                    <a id="" href="/projects/<%=project._id%>/news/<%=card._id%>/edit">I want to change
-                        the <%= card.title%> info</a>
+                    <a class="button" id="" href="/projects/<%=project._id%>/news/<%=card._id%>/edit">Update</a>
 
                     <form action="/projects/<%=project._id%>/news/<%=card._id%>/delete/?_method=DELETE" method="POST">
-                        <input class="btn btn-outline-danger" type="submit" value="delete">
+                        <input class="button danger" type="submit" value="delete">
                     </form>
                 </div>
             </div>
@@ -208,7 +207,7 @@
             <% })%>
             <div class="col-12">
                 <!-- <a href="/projects/<%=project._id%>/news/new">Add news card</a> -->
-                <a href="/projects/<%=project._id%>/news/new" class="button cta">
+                <a href="/projects/<%=project._id%>/news/new" class="cta">
                     <span>Add A new Card</span>
                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                         <path d="M1,5 L11,5"></path>
@@ -222,7 +221,7 @@
 </div>
 
 <form action="/projects/<%=project._id%>/delete/?_method=DELETE" method="POST">
-    <input class="button btn btn-outline-danger" type="submit" value="Delete <%= project.name%>">
+    <input class="button danger" type="submit" value="Delete <%= project.name%>">
 </form>
 
 

@@ -44,3 +44,10 @@
     color: white;
     border: solid 2px #fff;
 }
+
+.vl-brand {
+    font-size: 1.7em;
+    padding: 10px 10px 10px 20px;
+    font-family: Lato, sans-serif;
+    color: #fff;
+}

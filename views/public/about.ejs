@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-
+<link rel="stylesheet" href="/css/team.css">
 <div class="container">
     <div class="container proj-header bg-mustard ">
         <h1 class="text-center">Venture Lab Team</h1>
@@ -15,22 +15,21 @@
     <div class="row">
         <% members.map((member)=>{ %>
         <div class="col-md-6 col-lg-6 col-xl-4">
-            <div class="card">
-                <div style="background: url(<%=member.image%>) center no-repeat;background-size: cover;"
+            <div class="member-card">
+                <!-- <div style="background: url(<%=member.image%>) center no-repeat;background-size: cover;"
                     class="card-img-top">
-                </div>
-                <div class="card-body">
-                    <h5 class="text-center card-title"><%=member.name%></h5>
-                    <p class="card-text"><%=member.role%></p>
-                    <%if(member.url!=='') { %>
-                    <a href="<%=member.url%>" class="stretched-link"></a>
-                    <% }%>
+                </div> -->
+                <img src="<%=member.image%>" alt="" srcset="">
+                <h5 class=""><%=member.name%></h5>
+                <p class=""><%=member.role%></p>
+                <%if(member.url!=='') { %>
+                <a href="<%=member.url%>" class="stretched-link"></a>
+                <% }%>
 
 
-                </div>
+
             </div>
+            <% })%>
         </div>
-        <% })%>
     </div>
-</div>
-<%include ../partials/footer%>
+    <%include ../partials/footer%>

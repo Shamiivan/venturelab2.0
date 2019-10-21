@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +24,7 @@
 <body>
     <div id="navbar" class="position-fixed w-100 z-index-10">
         <nav class="navbar navbar-expand-lg">
-            <a class="nav-link navbar-brand" href="/">Venture Lab</a>
+            <a class="nav-link navbar-brand vl-brand" href="/">Venture Lab</a>
             <button class="navbar-toggler color-white" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -75,7 +78,8 @@
             <div class="row">
                 <div class="col-md-6 border">
                     <div class="ctn">
-                        <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.nytimes.com/2016/10/04/well/family/the-4-traits-that-put-kids-at-risk-for-addiction.html"
+                            target="_blank" rel="noopener noreferrer">
                             <div class="prev-article-image ">
                             </div>
                         </a>
@@ -105,7 +109,7 @@
                             provide training and supervision to health and educational professionals who wish to
                             implement
                             PreVenture in their community.</p>
-                        <a href="/about">More about Venture Lab</a>
+                        <a href="/about/46fBxzRSz3bmj/" class="button centered">More about Venture Lab</a>
                     </div>
 
                 </div>
@@ -121,63 +125,17 @@
             <div class="row">
                 <% projects.map((project)=>{ %>
                 <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="card">
-                        <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
-                            class="card-img-top">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center card-title"><%=project.name%></h5>
-                            <p class="card-text"><%=project.description.substring(0, 202)%>[...]</p>
-                            <!-- <a href="#" class="btn btn-primary stretched-link">Go somewhere</a> -->
-                        </div>
+                    <div class="project-card">
+                        <!-- <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
+                            class="card-img-top"> -->
+                        <img src="<%=project.image%>" alt="">
+                        <h5 class=""><%=project.name%></h5>
+                        <p class=""><%=project.description.substring(0, 202)%>[...]</p>
+                        <a href="/projects/<%=project.id%>/showToPublic/46fBxzRSz3bmj" class="stretched-link"></a>
                     </div>
                 </div>
 
                 <% })%>
-
-                <!-- <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-img-top">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center card-title">CUSP</h5>
-                            <p class="card-text">The Canadian Underage Substance Use Prevention (CUSP)
-                                Trial is a multi-site, pan-Canadian study that aims to evaluate the long-term
-                                effects of PreVenture on preventing risk behaviours that can lead to substance
-                                misuse </p>
-                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-img-top">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center card-title">ABrain</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="card">
-                        <div class="card-img-top">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="text-center card-title">CoVenture</h5>
-                            <p class="card-text">An international research consortium aims to identify the
-                                apparatus of views surrounding the BDMA, in order to develop sound governance to
-                                apply the BDMA into practice.</p>
-                            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -253,7 +211,66 @@
 
 
 
+    <footer class="bottom" id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-1 col-lg-0"></div>
+                <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+                    <div class="chu-image"><img src="/images/chu-logo.png" alt="" srcset=""></div>
 
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <h4>Adress</h4>
+                    <p id="footer-p">3175 Chemin de la Côte-Sainte-Catherine
+                        Montréal, QC
+                        H3T 1C4</p>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="">Preventure</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Publications</a></li>
+                        <li><a href="">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="">Opportunities @ Venture Lab</a></li>
+                        <li><a href="/forum">Preventure Portal</a></li>
+                        <li><a
+                                href="https://www.nytimes.com/2016/10/04/well/family/the-4-traits-that-put-kids-at-risk-for-addiction.html">in
+                                the press</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-6 col-sm-12">
+                    <h4>Contact</h4>
+                    <div><i class="fas fa-inbox fa-2x"></i>
+                        <p class="white">info@conrodventurelab.com</p>
+                    </div>
+                    <div class="icons">
+                        <a href="#!">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="#!">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-1 col-md-0"></div> -->
+            </div>
+        </div>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -267,8 +284,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/cms.js"></script>
     <script src="/js/main.js"></script>
-
 </body>
 
 </html>

@@ -1,14 +1,18 @@
 <% include ../partials/header %>
-
+<link rel="stylesheet" href="/css/cms.css">
 <div class="container">
     <div class="row">
         <%Projects.map((project)=>{%>
         <div class="col-md-4">
-            <div style="background:url(<%= project.image%>); height:200px;"></div>
-            <h3><%= project.name%></h3>
-            <p><%= project.description%></p>
+            <div class="project-card smaller">
+                <img src="<%= project.image%>" alt="" srcset="">
+                <h3><%= project.name%></h3>
+                <!-- <p><%= project.description%></p> -->
+            </div>
+            <!-- <div style="background:url(<%= project.image%>); height:200px;"></div> -->
+            <a class="stretched-link" href="/projects/<%=project.id%>/edit"></a>
         </div>
-        <a href="/projects/<%=project.id%>/edit">Update this project</a>
+
         <% })%>
 
     </div>
@@ -16,7 +20,7 @@
 </div>
 
 <div class="col-12">
-    <a href="/projects/new" class="button cta">
+    <a href="/projects/new" class="cta">
         <span>Add A new Project</span>
         <svg width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>

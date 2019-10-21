@@ -9,7 +9,7 @@ label {
 .bordered {
     border: 1px outset rgba(255, 171, 157, 0.5);
     border-radius: 10px;
-    margin: 2px;
+    margin: 7px 2px;
     /* background: #f1f1f1; */
 }
 
@@ -26,7 +26,7 @@ a {
 
 .cta {
     position: relative;
-    margin: 40px 30px;
+    /* margin: 50px 30px; */
     padding: 19px 22px;
     transition: all 0.4s ease;
 }
@@ -42,6 +42,7 @@ a {
     width: 56px;
     height: 56px;
     transition: all 0.3s ease;
+
 }
 
 .cta span {
@@ -52,6 +53,7 @@ a {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     vertical-align: middle;
+
 }
 
 .cta svg {
@@ -65,6 +67,8 @@ a {
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
+    margin: 10px 3px;
+
 }
 
 .cta:hover:before {
@@ -91,9 +95,10 @@ a {
 }
 
 .button {
-    margin: 5px 10px 2px 2px;
-    height: 50px;
+    margin: 5px 10px 2px 5px;
+    height: 55px;
 }
+
 
 ul {
     padding: 0;
@@ -101,9 +106,10 @@ ul {
 
 .list-item {
     list-style: none;
-    font-size: 1em;
+    font-size: 1.1em;
     margin: 0;
     padding: 0;
+    font-weight: 700;
 }
 
 .ghost {
@@ -136,4 +142,13 @@ ul {
     height: 250px;
     border-radius: 50%;
     border: solid 2px #333;
+}
+
+.project-card.smaller {
+    height: 300px;
+    margin: 10px 5px;
+}
+
+.danger:hover {
+    background: #ff2600;
 }

@@ -119,15 +119,15 @@
             <h2>Team</h2> <span></span>
         </div>
         <%project.teamMembers.forEach((member)=>{ %>
-        <div class="bordered member-ctn col-md-6">
+        <div class="bordered member-ctn col-md-5">
             <ul>
                 <li class="list-item"><%= member.name%>, <%= member.role%></li>
             </ul>
             <div class="row">
-                <a class="button btn btn-outline-info" id=""
-                    href="/projects/<%=project._id%>/team/<%=member._id%>/edit">Update Member</a>
+                <a class="btn btn-outline-info" id="" href="/projects/<%=project._id%>/team/<%=member._id%>/edit">Update
+                    Member</a>
                 <form action="/projects/<%=project._id%>/team/<%=member._id%>/delete/?_method=DELETE" method="POST">
-                    <input class="button danger" type="submit" value="Delete Member">
+                    <input class="btn btn-outline-danger" type="submit" value="Delete Member">
                 </form>
             </div>
         </div>
@@ -178,14 +178,14 @@
     </div>
 </div> -->
 
-<div class=" container">
+<div class="container">
     <div class="header bg-red">
         <h2>News & Events</h2> <span></span>
     </div>
     <div class="">
         <div class="row">
             <%project.news.forEach((card)=>{ %>
-            <div class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
+            <div class="col-md-6 col-lg-4 col-sm-12">
                 <a href="<%= card.url%>">
                     <div class="news-card">
                         <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
@@ -195,13 +195,16 @@
                         <p><%= card.description%></p>
                     </div>
                 </a>
-                <div class="col-12">
-                    <a class="button" id="" href="/projects/<%=project._id%>/news/<%=card._id%>/edit">Update</a>
+                <div class="row">
 
+                    <a class="btn btn-outline-info" id=""
+                        href="/projects/<%=project._id%>/news/<%=card._id%>/edit">Update</a>
                     <form action="/projects/<%=project._id%>/news/<%=card._id%>/delete/?_method=DELETE" method="POST">
-                        <input class="button danger" type="submit" value="delete">
+                        <input class="btn btn-outline-danger" type="submit" value="delete">
                     </form>
+
                 </div>
+
             </div>
 
             <% })%>
@@ -220,17 +223,15 @@
     </div>
 </div>
 
-<form action="/projects/<%=project._id%>/delete/?_method=DELETE" method="POST">
+<!-- <form action="/projects/<%=project._id%>/delete/?_method=DELETE" method="POST">
     <input class="button danger" type="submit" value="Delete <%= project.name%>">
-</form>
+</form> -->
+
+<a class="button" href="/projects">Back</a>
 
 
 
-
-<!-- <form action='/projects/images/' method="POST" enctype="multipart/form-data">
-        <input class="form-control-file" type='file' name='image' />
-        <button> SUBMIT</button>
-    </form> -->
+<!--  -->
 
 <!-- </div> <a href="/projects/header/new/">Add a new <section></section></a> -->
 <%include ../partials/footer%>

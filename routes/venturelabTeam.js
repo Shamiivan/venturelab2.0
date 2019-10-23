@@ -86,7 +86,7 @@ router.put("/:id/", parser.single("image"), (req, res) => {
         member.image = req.file.url;
         Lab.findByIdAndUpdate(req.params.id, member)
             .then(updatedLab => {
-                res.redirect('ventureLabTeam');
+                res.redirect('/ventureLabTeam');
             })
             .catch(err => console.log(err));
     }

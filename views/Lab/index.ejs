@@ -1,25 +1,36 @@
 <% include ../partials/header %>
+<link rel="stylesheet" href="/css/cms.css">
 <div class="container">
     <div class="row">
         <% members.map((member)=>{ %>
         <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="card">
-                <div style="background: url(<%=member.image%>) center no-repeat;background-size: contain;"
+            <div class="vl-member-card">
+                <!-- <div style="background: url(<%=member.image%>) center no-repeat;background-size: contain;"
                     class="card-img-top">
-                </div>
+                </div> -->
+                <img src="<%=member.image%>" alt="" srcset="">
                 <div class="card-body">
                     <h5 class="text-center card-title"><%=member.name%></h5>
-                    <p class="card-text"><%=member.role%></p>
-                    <a href="/ventureLabTeam/<%=member.id%>/edit" class=" stretched-link"></a>
+                    <!-- <p class="card-text"><%=member.role%></p> -->
+                    <a href="/ventureLabTeam/<%=member.id%>/edit" class=" stretched-link">Update</a>
                 </div>
             </div>
         </div>
+
+        <!-- <div class="card" style="width: 18rem;">
+            <img src="<%=member.image%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%=member.name%></h5>
+                <p class=" card-text"><%=member.role%></p>
+                <a href="/ventureLabTeam/<%=member.id%>/edit" class="stretched-link"></a>
+            </div>
+        </div> -->
 
         <% })%>
     </div>
 
 </div>
-<div class="col-12">
+<div class=" col-12">
     <a href="/ventureLabTeam/new" class="cta">
         <span>Add A new member</span>
         <svg width="13px" height="10px" viewBox="0 0 13 10">

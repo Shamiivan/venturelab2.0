@@ -1,6 +1,6 @@
 <%include ../partials/header%>
-
-<div class="container ">
+<link rel="stylesheet" href="/css/cms.css">
+<div class="container member-form ">
     <form action="/projects/<%=project_id%>/news/<%=news._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-group ">
             <label for="inputName" class="form-label">Title</label>
@@ -25,9 +25,10 @@
             <label for="imageFile">Example file input</label>
             <input type="file" name="image" class="form-control-file" id="imageFile">
         </div>
+        <div class="row">
+            <button class="btn btn-outline-info"> SUBMIT</button>
+        </div>
+        <a href="/projects/<%=project_id%>/edit">Back</a>
 
-        <button> SUBMIT</button>
     </form>
     <hr>
-
-</div> <a href="/projects/header/new/">Add a new <section></section></a>

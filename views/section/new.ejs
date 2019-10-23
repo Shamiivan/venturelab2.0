@@ -1,11 +1,9 @@
-<h1>Section New</h1>
-
 <%include ../partials/header%>
-
-<div class="container ">
+<link rel="stylesheet" href="/css/cms.css">
+<div class="container">
     <form action="/projects/<%=project._id%>/section/" method="POST" enctype="multipart/form-data">
         <div class="form-group ">
-            <label for="inputName" class="form-label">What's the title of the section</label>
+            <label for="inputName" class="form-label">What's the title of the section?</label>
             <input type="text" name="title" class="form-control" id="inputName" placeholder="Title">
         </div>
         <div class="form-group">
@@ -22,11 +20,11 @@
         </div>
 
         <div class="form-group">
-            <label for="imageFile">Upload an Image</label>
+            <label for="imageFile">Upload an Image For this section</label>
             <input type="file" name="image" class="form-control-file" id="imageFile">
         </div>
 
-        <button> SUBMIT</button>
+        <button class="button"> SUBMIT</button>
     </form>
     <hr>
 

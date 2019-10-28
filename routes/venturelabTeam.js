@@ -41,16 +41,30 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/', parser.single("image"), (req, res) => {
-    const member = {};
-    member.name = req.body.name;
-    member.role = req.body.role;
-    member.email = req.body.email;
-    member.publicationLink = req.body.publicationLink;
-    member.image = req.file.url;
-    console.log(member);
-    Lab.create(member)
-        .then(newMemeber => res.redirect('/ventureLabTeam'))
-        .catch(err => console.log(err));
+    if (req.file == undefined) {
+        const member = {};
+        member.name = req.body.name;
+        member.role = req.body.role;
+        member.email = req.body.email;
+        member.publicationLink = req.body.publicationLink;
+        // member.image = req.file.url;
+        console.log(member);
+        Lab.create(member)
+            .then(newMemeber => res.redirect('/ventureLabTeam'))
+            .catch(err => console.log(err));
+    } else {
+        const member = {};
+        member.name = req.body.name;
+        member.role = req.body.role;
+        member.email = req.body.email;
+        member.publicationLink = req.body.publicationLink;
+        member.image = req.file.url;
+        console.log(member);
+        Lab.create(member)
+            .then(newMemeber => res.redirect('/ventureLabTeam'))
+            .catch(err => console.log(err));
+    }
+
 });
 
 router.get('/:id/edit', (req, res) => {

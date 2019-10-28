@@ -15,6 +15,8 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,400&display=swap"
         rel="stylesheet">
+    <!-- AOS(ANIMATIONS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- <link rel="stylesheet" href="/css/navbar.css"> -->
     <link rel="stylesheet" href="/css/home.css">
@@ -90,15 +92,23 @@
                         <div class="container home-header bg-mustard ">
                             <h1 class="text-center">Venture Lab</h1>
                         </div>
-                        <p>The Venture Lab supports research on adolescent brain development and risk factors for mental
+                        <p data-aos="fade-left" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="50"
+                            data-aos-once="true">
+                            The
+                            Venture Lab supports
+                            research on adolescent brain development and risk factors for mental
                             health and substance use disorders.</p>
-                        <p>Led by Dr. Patricia Conrod, professor of psychiatry at the Université de Montréal, we are
+                        <p data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-delay="50"
+                            data-aos-once="true">
+                            Led by Dr. Patricia Conrod, professor of psychiatry at the Université de Montréal, we are
                             working
                             on the development of new mental health promotion strategies by studying the influence of
                             genetics, environmental factors, and neuro-cognitive development on mental health and
                             addiction
                         </p>
-                        <p>Based out of CHU Sainte-Justine’s Research Centre in Montreal, Quebec, Venture Lab features
+                        <p data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-delay="50"
+                            data-aos-once="true">
+                            Based out of CHU Sainte-Justine’s Research Centre in Montreal, Quebec, Venture Lab features
                             an
                             international roster of scientists conducting a number of important research projects with a
                             key
@@ -120,11 +130,13 @@
     <section id="projects">
         <div class="container-fluid">
             <div class="container-fluid proj-header bg-mustard ">
-                <h1 class="text-center">Projects</h1>
+                <h1 data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500" data-aos-delay="60"
+                    data-aos-once="true" class="text-center">Projects</h1>
             </div>
             <div class="row">
                 <% projects.map((project)=>{ %>
-                <div class="col-md-6 col-lg-6 col-xl-3">
+                <div data-aos="fade-in" data-aos-offset="300" data-aos-duration="1500" data-aos-delay="60"
+                    data-aos-once="true" class="col-md-6 col-lg-6 col-xl-3">
                     <div class="project-card">
                         <!-- <div style="background: url(<%=project.image%>) center no-repeat;background-size: contain;"
                             class="card-img-top"> -->
@@ -142,9 +154,11 @@
     <section id="projects">
         <div class="container-fluid">
             <div class="container-fluid proj-header bg-mustard ">
-                <h1 class="text-center">News & Events</h1>
+                <h1 data-aos="fade-left" data-aos-offset="300" data-aos-duration="1500" data-aos-delay="60"
+                    data-aos-once="true" class="text-center">News & Events</h1>
             </div>
-            <div class="row">
+            <div data-aos="fade-in" data-aos-offset="300" data-aos-duration="1500" data-aos-delay="60"
+                data-aos-once="true" class="row">
                 <div class="col-md-6 col-lg-6 col-xl-4 card-ctn">
                     <a href="http://" target="_blank" rel="noopener noreferrer">
                         <div class="news card">
@@ -271,6 +285,11 @@
             </div>
         </div>
     </footer>
+    <!-- ANIMATION JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

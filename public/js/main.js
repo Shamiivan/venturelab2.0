@@ -12,9 +12,10 @@ $(window).scroll(function () {
     }
 });
 
-$(window).scroll(function () {
-    // $("#brand").addClass('blue-bg');
-});
+// $(window).scroll(function () {
+//     let viewPortLevel = $(window).scrollTop();
+//     console.log(viewPortLevel);
+// });
 
 
 $("#add-comment").click(function () {

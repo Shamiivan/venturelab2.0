@@ -3,6 +3,10 @@
     border-radius: 5px;
 }
 
+.page-news-card img {
+    height: 200px;
+}
+
 .page-news-card h5 {
     font-size: 1.4em;
     font-weight: 700;

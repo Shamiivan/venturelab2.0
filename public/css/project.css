@@ -129,6 +129,22 @@ body {
     padding: 10px 0px 0px 10px;
 }
 
+.bg-text p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 10px 0px 0px 10px;
+}
+
+.bg-text {
+    height: 50vh;
+    margin: 5px;
+    border-radius: 10px;
+    background-size: cover;
+}
+
 .content .image {
     height: 50vh;
     margin: 5px;
@@ -188,8 +204,8 @@ body {
 }
 
 /* PREVENTURE  */
-.prev-hero {
-    padding: 30px;
+.prev-hero.container-fluid {
+    padding-top: 20px;
 
 }
 
@@ -222,11 +238,21 @@ body {
     color: #222;
 }
 
+.container.header.prev-heading-block {
+    padding: 10px;
+    color: black;
+    min-height: 50px;
+    margin-top: 30px;
+    margin-top: 30px;
+    background: url('/images/paint-brush.png') bottom no-repeat;
+    background-size: cover;
+}
+
 .prev-heading-block {
     padding: 10px;
     color: black;
     min-height: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
     background: url('/images/paint-brush.png') bottom no-repeat;
     background-size: cover;
 }
@@ -235,6 +261,21 @@ body {
     font-family: Merriweather, serif;
     font-size: 2em;
     font-weight: 300;
+}
+
+/* .prev-heading-block {
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    min-height: 50px;
+    margin-top: 20px;
+} */
+
+.header h2 {
+    font-family: Merriweather, serif;
+    font-size: 3.7em;
+    font-weight: 300;
+
 }
 
 .prev-section-content {
@@ -252,6 +293,7 @@ body {
     letter-spacing: 1px;
     padding: 10px 0px 0px 10px;
     color: #222;
+
 }
 
 .prev-section-media {
@@ -261,10 +303,12 @@ body {
 }
 
 .prev-video {
-    margin-top: 40px;
+    margin-top: 95px;
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
     position: relative;
+    border-radius: 10px;
+
 
 }
 

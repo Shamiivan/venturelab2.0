@@ -1,10 +1,9 @@
 <section class="prev-hero container-fluid">
     <div class="row">
         <div class="col-md-5 prev-hero-content">
-
-            <h1 class="text-center"><%= project.name%></h1>
-            <p><%= project.description%></p>
-            <div class="row">
+            <h1 data-aos="fade-down-left" class="text-center"><%= project.name%></h1>
+            <p data-aos="fade-right"><%= project.description%></p>
+            <div data-aos="fade-in" class="row">
                 <% project.logos.map((logo)=>{ %>
                 <div class="col-md-4 col-xs-6 logo-ctn">
                     <img src="<%=logo.imageUrl%>" alt="">
@@ -12,8 +11,8 @@
                 <% });%>
             </div>
         </div>
-        <div class="col-md-7">
-            <div style="background:url(<%= project.image%>) center no-repeat; background-size:cover;height:80vh">
+        <div data-aos="fade-in" class="col-md-7">
+            <div style="height:80vh;background:url(<%= project.image%>) center no-repeat; background-size:cover">
             </div>
         </div>
     </div>
@@ -29,7 +28,7 @@
         </div>
         <div class="col-md-6 prev-section-content">
             <div class="prev-heading-block">
-                <h2><%= section.title%></h2>
+                <h2 data-aos="fade-left"><%= section.title%></h2>
             </div>
             <p><%= section.p1%></p>
             <p><%= section.p2%></p>
@@ -40,14 +39,15 @@
         <div class="row">
             <div class="col-md-6 prev-section-content">
                 <div class="prev-heading-block">
-                    <h2><%= section.title%></h2>
+                    <h2 data-aos="fade-left"><%= section.title%></h2>
                 </div>
                 <p><%= section.p1%></p>
                 <p><%= section.p2%></p>
                 <p><%= section.p3%></p>
                 <p><%= section.p4%></p>
                 <%if(section.title == 'Interested in bringing PreVenture to your community, school or institution?'){ %>
-                <p>*Eligibility – In order to receive
+                <a href="/contact" class="button">Inquire About Preventure</a>
+                <p style="font-size:0.7em">*Eligibility – In order to receive
                     PreVenture
                     Facilitator Certification, participants must be employed by an educational or
                     counselling
@@ -56,7 +56,9 @@
             </div>
             
             <div class="col-md-6 prev-section-media">
-                <div style="background:url(<%= section.image%>) center no-repeat; background-size:cover;height:80vh">
+                <div style="border-radius:10px;height:800px;margin-top:-20px;background:url(<%= section.image%>)
+                center no-repeat;
+                background-size:cover">
             </div>
         </div>
     </div>
@@ -66,22 +68,21 @@
 </section>
 
 <section class="container">
-    <div class="header prev-heading-block">
-        <h2>News & Events</h2> <span></span>
+    <div class="container header prev-heading-block">
+        <h2 class="text-center">News & Events</h2>
     </div>
     <div class="">
         <div class="row">
             <%project.news.forEach((card)=>{ %>
-            <div class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
-                <a href="<%= card.url%>">
-                    <div class="news-card">
-                        <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
-                            class="news-image"> </div>
-                        <span>[<%= card.type%>]</span>
-                        <h3><%= card.title%></h3>
-                        <p><%= card.description%></p>
-                    </div>
-                </a>
+            <div style="cursor:pointer;" class="col-md-6 col-lg-4 col-sm-12 px-1 mx-auto">
+                <div class="news-card">
+                    <div style="background: url(<%= card.image%>) center no-repeat; background-size: cover;"
+                        class="news-image"> </div>
+                    <span>[<%= card.type%>]</span>
+                    <h3><%= card.title%></h3>
+                    <p><%= card.description%></p>
+                </div>
+                <a class="stretched-link" target="_blank" href="<%= card.url%>"> </a>
             </div>
             <% })%>
         </div>

@@ -130,9 +130,7 @@ router.post("/send", (req, res) => {
             user: "labventure1@gmail.com", // generated ethereal user
             pass: "2018Bonbon" //
         },
-        // tls: {
-        //     rejectUnauthorized: false
-        // },
+
     });
 
     // setup email data with unicode symbols
@@ -156,5 +154,14 @@ router.post("/send", (req, res) => {
         // });
         res.redirect('/');
     });
+});
+
+
+router.get('/oppurtinities', (req, res) => {
+    res.render('public/opportunity');
+});
+
+router.get('/blogPost', (req, res) => {
+    res.render('public/blogPost');
 });
 module.exports = router;

@@ -21,7 +21,7 @@ router.get("/register", function (req, res) {
     res.render("user/register");
 });
 //handling user sign up
-router.post("/register", function (req, res) {
+router.post("/FG3ffhNj79BkGhNLWtAgBMFyLkTA/register/", function (req, res) {
     User.register(new User({
         username: req.body.username
     }), req.body.password, function (err, user) {
